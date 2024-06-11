@@ -7,7 +7,7 @@ export const useMonstersStore = defineStore('monsters', {
     page: 1,
   }),
   actions: {
-    async fetchMonsters() {
+    async fetchMonsters(perPage = this.perPage) {
       
       const response = await fetch(`https://metallo.ew.r.appspot.com/monsters?page=${this.page}`);
       const data = await response.json();
